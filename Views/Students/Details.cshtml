@@ -1,0 +1,66 @@
+﻿@model MIS4200_SM126215.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.permanentAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.permanentAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.permanentState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.permanentState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.permanentZip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.permanentZip)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.studentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
