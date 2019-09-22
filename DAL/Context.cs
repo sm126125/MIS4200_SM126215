@@ -14,9 +14,10 @@ namespace MIS4200_SM126215.DAL
 
         }
 
-        public DbSet<Student> Student { get; set; }
-        public DbSet<Rental> Rental { get; set; }
-        public DbSet<Property> Property { get; set; }
-        
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Rental> Rentals { get; set; }
+        public DbSet<Property> Properties { get; set; }
+        
+
     }
 }

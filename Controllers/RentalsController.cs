@@ -18,8 +18,8 @@ namespace MIS4200_SM126215.Controllers
         // GET: Rentals
         public ActionResult Index()
         {
-            var rental = db.Rental.Include(r => r.Property).Include(r => r.Student);
-            return View(rental.ToList());
+            var rentals = db.Rentals.Include(r => r.Property).Include(r => r.Student);
+            return View(rentals.ToList());
         }
 
         // GET: Rentals/Details/5
@@ -29,7 +29,7 @@ namespace MIS4200_SM126215.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Rental rental = db.Rental.Find(id);
+            Rental rental = db.Rentals.Find(id);
             if (rental == null)
             {
                 return HttpNotFound();
@@ -40,8 +40,8 @@ namespace MIS4200_SM126215.Controllers
         // GET: Rentals/Create
         public ActionResult Create()
         {
-            ViewBag.propertyID = new SelectList(db.Property, "propertyID", "address");
-            ViewBag.studentID = new SelectList(db.Student, "studentID", "firstName");
+            ViewBag.propertyID = new SelectList(db.Properties, "propertyID", "address");
+            ViewBag.studentID = new SelectList(db.Students, "studentID", "firstName");
             return View();
         }
 
@@ -54,13 +54,13 @@ namespace MIS4200_SM126215.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Rental.Add(rental);
+                db.Rentals.Add(rental);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.propertyID = new SelectList(db.Property, "propertyID", "address", rental.propertyID);
-            ViewBag.studentID = new SelectList(db.Student, "studentID", "firstName", rental.studentID);
+            ViewBag.propertyID = new SelectList(db.Properties, "propertyID", "address", rental.propertyID);
+            ViewBag.studentID = new SelectList(db.Students, "studentID", "firstName", rental.studentID);
             return View(rental);
         }
 
@@ -71,13 +71,13 @@ namespace MIS4200_SM126215.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Rental rental = db.Rental.Find(id);
+            Rental rental = db.Rentals.Find(id);
             if (rental == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.propertyID = new SelectList(db.Property, "propertyID", "address", rental.propertyID);
-            ViewBag.studentID = new SelectList(db.Student, "studentID", "firstName", rental.studentID);
+            ViewBag.propertyID = new SelectList(db.Properties, "propertyID", "address", rental.propertyID);
+            ViewBag.studentID = new SelectList(db.Students, "studentID", "firstName", rental.studentID);
             return View(rental);
         }
 
@@ -94,8 +94,8 @@ namespace MIS4200_SM126215.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.propertyID = new SelectList(db.Property, "propertyID", "address", rental.propertyID);
-            ViewBag.studentID = new SelectList(db.Student, "studentID", "firstName", rental.studentID);
+            ViewBag.propertyID = new SelectList(db.Properties, "propertyID", "address", rental.propertyID);
+            ViewBag.studentID = new SelectList(db.Students, "studentID", "firstName", rental.studentID);
             return View(rental);
         }
 
@@ -106,7 +106,7 @@ namespace MIS4200_SM126215.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Rental rental = db.Rental.Find(id);
+            Rental rental = db.Rentals.Find(id);
             if (rental == null)
             {
                 return HttpNotFound();
@@ -119,8 +119,8 @@ namespace MIS4200_SM126215.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Rental rental = db.Rental.Find(id);
-            db.Rental.Remove(rental);
+            Rental rental = db.Rentals.Find(id);
+            db.Rentals.Remove(rental);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

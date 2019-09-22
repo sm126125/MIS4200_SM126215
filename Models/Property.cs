@@ -16,6 +16,6 @@ namespace MIS4200_SM126215.Models
         
         public DateTime startTime { get; set; }
         public DateTime endTime { get; set; }
-        public ICollection<Rental> Rental { get; set; }
+        
     }
 }
