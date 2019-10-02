@@ -11,7 +11,7 @@ using MIS4200_SM126215.Models;
 
 namespace MIS4200_SM126215.Controllers
 {
-    public class PropertiesController : Controller
+    public class PropertyController : Controller
     {
         private Context db = new Context();
 
