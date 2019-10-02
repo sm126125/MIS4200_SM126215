@@ -40,8 +40,8 @@ namespace MIS4200_SM126215.Controllers
         // GET: Rentals/Create
         public ActionResult Create()
         {
-            ViewBag.propertyID = new SelectList(db.Properties, "propertyID", "address");
-            ViewBag.studentID = new SelectList(db.Students, "studentID", "firstName");
+            ViewBag.propertyID = new SelectList(db.Properties, "propertyID", "fullAddress");
+            ViewBag.studentID = new SelectList(db.Students, "studentID", "fullName");
             return View();
         }
 

@@ -27,9 +27,13 @@ namespace MIS4200_SM126215.Models
         [Required(ErrorMessage = "State is required")]
         [StringLength(2, MinimumLength = 2, ErrorMessage = "State must be two characters")]
         public string state { get; set; }
+        [Display(Name = "Property Address")]
+        public string fullAddress { get { return address + " " + street + " " + city + ", " + state; } }
+    
         [Display (Name = "Zip Code")]
         [Required(ErrorMessage = "Zip Code is required")]
         [StringLength(20)]
+
         public string zipCode { get; set; }
         [Display (Name = "Rental Start Date")]
         [Required(ErrorMessage = "Start Date is required")]

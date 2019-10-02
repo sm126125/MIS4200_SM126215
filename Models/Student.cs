@@ -18,6 +18,8 @@ namespace MIS4200_SM126215.Models
         [Required(ErrorMessage = "Student last name is required")]
         [StringLength(20)]
         public string lastName { get; set; }
+        [Display(Name = "Student Name")]
+        public string fullName { get { return firstName + " " + lastName; } }
         [Display (Name = "Mobile Phone Number")]
         [DataType(DataType.PhoneNumber)]
         [RegularExpression(@"^(\(\d{3}\) |\d{3}-)\d{3}-\d{4}$", ErrorMessage = "Phone numbers must be in the format (xxx) xxx-xxxx or xxx-xxx-xxxx")]
