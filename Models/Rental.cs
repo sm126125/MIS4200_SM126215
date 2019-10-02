@@ -17,6 +17,8 @@ namespace MIS4200_SM126215.Models
         public int propertyID { get; set; }
         public virtual Property Property { get; set; }
         [Display (Name = "Monthly Rent")]
+        [Required(ErrorMessage = "Monthly Rent is required")]
+        [DataType(DataType.Currency)]
         public Decimal monthlyRent { get; set; }
 
         
