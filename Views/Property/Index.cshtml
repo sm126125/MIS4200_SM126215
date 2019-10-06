@@ -4,7 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Property List</h2>
+
+<div class="well"> <h2>Property List <span class="glyphicon glyphicon-home"></span></h2></div>
+
 
 <p>
     @Html.ActionLink("Create a new property", "Create")
@@ -35,35 +37,36 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.street)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.city)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.state)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.zipCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.startTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.endTime)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.propertyID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.propertyID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.propertyID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.state)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.zipCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.startTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.endTime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.propertyID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.propertyID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.propertyID })
+            </td>
+        </tr>
+    }
 
 </table>
